@@ -70,8 +70,9 @@ for local in locais: # para cada local fazer processo
     navegador.find_element_by_xpath('#clicar em filtrar').click()
     time.sleep(5)  
     #Enviando para dowloads
-    navegador.find_element_by_xpath('#clicar em selecionar').click()    #clicar em selecionar
-    navegador.find_element_by_xpath('#clicar em selecionar').click()    #clicar em selecionar
+    navegador.find_element_by_xpath('#clicar em selecionar fotos').click()    #clicar em selecionar
+    #podem ou não existir mais de 10 fotos
+    navegador.find_element_by_xpath('#clicar em selecionar mais de 10 fotos ').click()    #clicar em selecionar
     navegador.find_element_by_xpath('#clicar em agendar books de fotos').click()    #clicar em agendar books de fotos
     time.sleep(3)
     navegador.back() # volta para pagina anterior
