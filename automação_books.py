@@ -10,7 +10,7 @@ import pyautogui as pg
 
 # Definindo Locais
 
-locais = ["SUPERMARTKET - ALOVORADA","SUPERNARKET - BARRA OESTE","BARCELOS","CASA DO SABÃO"] # Lista que define endereços nome das lojas
+locais = ["# definir locais "] # Lista que define endereços nome das lojas
 
 # Definindo navegador
 
@@ -33,7 +33,6 @@ time.sleep(5)
 navegador.find_element_by_xpath("//a[@href='/CenterWeb/ureport']").click()
 
 # Selecionando Filtro copacol
-
 
 
 navegador.switch_to_frame('//*[@id="iFrameResizer0"]') #select 
@@ -64,6 +63,8 @@ navegador.find_element_by_xpath('#initial-period-filter').send_keys(data)
 # Definindo Local
 
 for local in locais: # para cada local fazer processo 
+    navegador.find_element_by_xpath('#xpath local')
+    navegador.find_element_by_xpath('#definir xpath de text box ').click()
     navegador.find_element_by_xpath('#definir xpath de text box ').send_keys(local)
     time.sleep(5)
     navegador.find_element_by_xpath('#clicar no check box do local').click()
