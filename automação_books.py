@@ -67,12 +67,13 @@ for local in locais: # para cada local fazer processo
     navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/button') # Seleciona local
     navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[1]/div/input').click() # seleciona text box local
     navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[1]/div/input').send_keys(local)
-    Navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[2]/a/label/input').click() # seleciona
-    Navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[2]/a/label/input').click() # tira a seleção
-    Navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[2]/a/label/input').click() # seleciona  novamente
+        for n in range(0,3):
+            Navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[2]/a/label/input').click() # seleciona
+    
     navegador.find_element_by_xpath('//*[@id="btnFilter"]').click()#clicar em filtrar
     pg.press('pagedown') #para viualizar o processo de click nos botões 
     pg.press('pagedown')
+    
     #Enviando para dowloads 
     
     Navegador.find_element_by_xpath('//*[@id="select_photo"]') #selecionar todas as fotos 
