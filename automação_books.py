@@ -82,13 +82,9 @@ for local in locais: # para cada local fazer processo
     if imagens > 10 :
         
         navegador.find_element_by_xpath('//*[@id="select_all_images"]/a ').click() #clicar em selecionar mais de 10 fotos (todas as fotos)
-        navegador.find_element_by_xpath('//*[@id="photo"]/div[2]/div[3]/div/div/button').click()  #clicar em agendar books de fotos
-  
-    
-    else:    
-        navegador.find_element_by_xpath('//*[@id="photo"]/div[2]/div[3]/div/div/button').click()  #clicar em agendar books de fotos
         
         
+navegador.find_element_by_xpath('//*[@id="photo"]/div[2]/div[3]/div/div/button').click()  #clicar em agendar books de fotos     
 time.sleep(3)
 navegador.back() # volta para pagina anterior
 wdw.until(frame_to_be_available_and_switch_to_it)
