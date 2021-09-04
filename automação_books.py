@@ -10,7 +10,7 @@ import pyautogui as pg
 
 # Definindo Locais
 
-locais = ["# definir locais "] # Lista que define endereços nome das lojas
+locais = ["alvorada", "barra oeste ","barcelos","casa do sabao","Compre mais ", "Gmap", "Guanabara", "Padrão", "Prezunic", "Ramigos", "Superprix"," Torre"] # Lista que define endereços nome das lojas 
 
 # Definindo navegador
 
@@ -34,14 +34,13 @@ navegador.find_element_by_xpath("//a[@href='/CenterWeb/ureport']").click()
 
 # Selecionando Filtro copacol
 
-
-navegador.switch_to_frame('//*[@id="iFrameResizer0"]') #select 
-navegador.find_element_by_xpath('') # clicar no filtro
-navegador.find_element_by_xpath('') # Selecionar o filtro
+wdw.until(frame_to_be_available_and_switch_to_it)
+navegador.switch_to_frame(0) #select 
+navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[1]/div[2]/div[2]/div/button/span').click() # clicar no filtro
+navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[1]/div[2]/div[2]/div/ul/li/a/label/input').click() # Selecionar o filtro
 
 # Definindo data
 
-#corrigir data 
 data = datetime.now()
 
 if datetime.today().weekday() != 0 :
@@ -63,20 +62,34 @@ navegador.find_element_by_xpath('#initial-period-filter').send_keys(data)
 # Definindo Local
 
 for local in locais: # para cada local fazer processo 
-    navegador.find_element_by_xpath('#xpath local')
-    navegador.find_element_by_xpath('#definir xpath de text box ').click()
-    navegador.find_element_by_xpath('#definir xpath de text box ').send_keys(local)
-    time.sleep(5)
-    navegador.find_element_by_xpath('#clicar no check box do local').click()
-    navegador.find_element_by_xpath('#clicar em filtrar').click()
-    time.sleep(5)  
-    #Enviando para dowloads
-    navegador.find_element_by_xpath('#clicar em selecionar fotos').click()    #clicar em selecionar
-    #podem ou não existir mais de 10 fotos
-    navegador.find_element_by_xpath('#clicar em selecionar mais de 10 fotos ').click()    #clicar em selecionar
-    navegador.find_element_by_xpath('#clicar em agendar books de fotos').click()    #clicar em agendar books de fotos
-    time.sleep(3)
-    navegador.back() # volta para pagina anterior
-    navegador.switch_to_frame(0)
-    time.sleep(2)
+    navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/button') # Seleciona local
+    navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[1]/div/input').click() # seleciona text box local
+    navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[1]/div/input').send_keys(local)
+    Navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[2]/a/label/input').click() # seleciona
+    Navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[2]/a/label/input').click() # tira a seleção
+    Navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[2]/a/label/input').click() # seleciona  novamente
+    navegador.find_element_by_xpath('//*[@id="btnFilter"]').click()#clicar em filtrar
+    pg.press('pagedown')
+    pg.press('pagedown')
+    #Enviando para dowloads 
+    
+    Navegador.find_element_by_xpath('//*[@id="select_photo"]') #selecionar todas as fotos 
+
+    imagens = navegador.find_element_by_xpath('//*[@id="countSelectedImages"]')
+    
+    if imagens > 10 :
+        navegador.find_element_by_xpath('//*[@id="select_all_images"]/a ').click() #clicar em selecionar mais de 10 fotos (todas as fotos)
+        navegador.find_element_by_xpath('//*[@id="photo"]/div[2]/div[3]/div/div/button').click()  #clicar em agendar books de fotos
+        time.sleep(2)
+        navegador.back() # volta para pagina anterior
+        wdw.until(frame_to_be_available_and_switch_to_it)
+        navegador.switch_to_frame(0)
+        time.sleep(2)
+    
+    else:    
+        navegador.find_element_by_xpath('//*[@id="photo"]/div[2]/div[3]/div/div/button').click()  #clicar em agendar books de fotos
+        navegador.back() # volta para pagina anterior
+        wdw.until(frame_to_be_available_and_switch_to_it)
+        navegador.switch_to_frame(0)
+        time.sleep(2)
     
