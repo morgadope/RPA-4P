@@ -71,7 +71,7 @@ for local in locais: # para cada local fazer processo
     Navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[2]/a/label/input').click() # tira a seleção
     Navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[2]/a/label/input').click() # seleciona  novamente
     navegador.find_element_by_xpath('//*[@id="btnFilter"]').click()#clicar em filtrar
-    pg.press('pagedown') #para visualizar o processo de click nos botões 
+    pg.press('pagedown') #para viualizar o processo de click nos botões 
     pg.press('pagedown')
     #Enviando para dowloads 
     
@@ -80,18 +80,18 @@ for local in locais: # para cada local fazer processo
     imagens = navegador.find_element_by_xpath('//*[@id="countSelectedImages"]')
     
     if imagens > 10 :
+        
         navegador.find_element_by_xpath('//*[@id="select_all_images"]/a ').click() #clicar em selecionar mais de 10 fotos (todas as fotos)
         navegador.find_element_by_xpath('//*[@id="photo"]/div[2]/div[3]/div/div/button').click()  #clicar em agendar books de fotos
-        time.sleep(2)
-        navegador.back() # volta para pagina anterior
-        wdw.until(frame_to_be_available_and_switch_to_it)
-        navegador.switch_to_frame(0)
-        time.sleep(2)
+  
     
     else:    
         navegador.find_element_by_xpath('//*[@id="photo"]/div[2]/div[3]/div/div/button').click()  #clicar em agendar books de fotos
-        navegador.back() # volta para pagina anterior
-        wdw.until(frame_to_be_available_and_switch_to_it)
-        navegador.switch_to_frame(0)
-        time.sleep(2)
+        
+        
+time.sleep(3)
+navegador.back() # volta para pagina anterior
+wdw.until(frame_to_be_available_and_switch_to_it)
+navegador.switch_to_frame(0)
+time.sleep(1)
     
