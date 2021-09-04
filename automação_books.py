@@ -54,8 +54,10 @@ data = (format(data,"%d/%m/%Y"))
     
 wdw.until(frame_to_be_available_and_switch_to_it)
 navegador.switch_to_frame(0)
+navegador.find_element_by_xpath('#initial-period-filter').click()
 navegador.find_element_by_xpath('#initial-period-filter').clear()
 navegador.find_element_by_xpath('#initial-period-filter').send_keys(data)
+navegador.find_element_by_xpath('#final-period-filter').click()
 navegador.find_element_by_xpath('#final-period-filter').clear
 navegador.find_element_by_xpath('#initial-period-filter').send_keys(data)
 
@@ -69,7 +71,7 @@ for local in locais: # para cada local fazer processo
     Navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[2]/a/label/input').click() # tira a seleção
     Navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[2]/a/label/input').click() # seleciona  novamente
     navegador.find_element_by_xpath('//*[@id="btnFilter"]').click()#clicar em filtrar
-    pg.press('pagedown')
+    pg.press('pagedown') #para visualizar o processo de click nos botões 
     pg.press('pagedown')
     #Enviando para dowloads 
     
