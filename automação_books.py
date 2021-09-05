@@ -8,10 +8,6 @@ from selenium.webdriver.support.expected_conditions import frame_to_be_available
 from selenium.webdriver.support.wait import WebDriverWait
 import pyautogui as pg 
 
-# Definindo Locais
-
-locais = ["alvorada", "barra oeste ","barcelos","casa do sabao","Compre mais ", "Gmap", "Guanabara", "Padrão", "Prezunic", "Ramigos", "Superprix"," Torre"] # Lista que define endereços nome das lojas 
-
 # Definindo navegador
 
 navegador = webdriver.Chrome()
@@ -63,6 +59,9 @@ navegador.find_element_by_xpath('#initial-period-filter').send_keys(data)
 
 # Definindo Local
 
+locais = ["alvorada", "barra oeste ","barcelos","casa do sabao","Compre mais ", "Gmap", "Guanabara", "Padrão", "Prezunic", "Ramigos", "Superprix"," Torre"] # Lista que define endereços nome das lojas 
+
+
 for local in locais: # para cada local fazer processo 
     navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/button') # Seleciona local
     navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[1]/div/input').click() # seleciona text box local
@@ -71,8 +70,9 @@ for local in locais: # para cada local fazer processo
             Navegador.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[2]/a/label/input').click() # seleciona
     
     navegador.find_element_by_xpath('//*[@id="btnFilter"]').click()#clicar em filtrar
-    pg.press('pagedown') #para viualizar o processo de click nos botões 
-    pg.press('pagedown')
+        for n in range(0,2):
+            pg.press('pagedown') #para viualizar o processo de click nos botões 
+    
     
     #Enviando para dowloads 
     
@@ -85,10 +85,15 @@ for local in locais: # para cada local fazer processo
         navegador.find_element_by_xpath('//*[@id="select_all_images"]/a ').click() #clicar em selecionar mais de 10 fotos (todas as fotos)
         
         
-navegador.find_element_by_xpath('//*[@id="photo"]/div[2]/div[3]/div/div/button').click()  #clicar em agendar books de fotos     
-time.sleep(3)
-navegador.back() # volta para pagina anterior
-wdw.until(frame_to_be_available_and_switch_to_it)
-navegador.switch_to_frame(0)
-time.sleep(1)
+    navegador.find_element_by_xpath('//*[@id="photo"]/div[2]/div[3]/div/div/button').click()  #clicar em agendar books de fotos     
+    time.sleep(3)
+    navegador.back() # volta para pagina anterior
+    wdw.until(frame_to_be_available_and_switch_to_it)
+    navegador.switch_to_frame(0)
+    time.sleep(1)
+
+    
+for n in range(0,10):
+    navegador.find_element_by_xpath("#xpath dowload") #baixar todos os arquivos gerados
+
     
