@@ -47,7 +47,6 @@ data = (format(data, "%d/%m/%Y"))
 
 wdw.until(frame_to_be_available_and_switch_to_it)
 driver.switch_to.frame(0)
-driver.switch_to.frame(driver.find_element_by_id(0))
 driver.find_element_by_xpath('//*[@id="initial-period-filter"]').click()
 driver.find_element_by_xpath('//*[@id="initial-period-filter"]').clear()
 driver.find_element_by_xpath('//*[@id="initial-period-filter"]').send_keys(data)
