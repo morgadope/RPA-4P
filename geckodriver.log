@@ -1,0 +1,46 @@
+1630964430201	geckodriver	INFO	Listening on 127.0.0.1:53388
+1630964433233	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\pedro\\AppData\\Local\\Temp\\rust_mozprofileBj09Pw"
+1630964434239	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\pedro\\AppData\\Local\\Temp\\rust_mozprofileBj09Pw\\search.json.mozlz4", (void 0)))
+1630964437185	Marionette	INFO	Listening on port 53398
+1630964437445	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1630964439775	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+SourceActor threw an exception: Error: Failed to fetch https://report.umov.me/report/1?authorization=633146ee33e3199d3de3fd884259439be176bf5. Code 2152924148.
+Stack: onResponse@resource://devtools/shared/DevToolsUtils.js:556:16
+onStopRequest@resource://gre/modules/NetUtil.jsm:128:18
+Line: 556, column: 16
+console.error: (new Error("Failed to fetch https://report.umov.me/report/1?authorization=633146ee33e3199d3de3fd884259439be176bf5. Code 2152924148.", "resource://devtools/shared/DevToolsUtils.js", 556))
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 556: Error: Failed to fetch https://report.umov.me/report/1?authorization=633146ee33e3199d3de3fd884259439be176bf5. Code 2152924148.
+1630964574790	Marionette	INFO	Stopped listening on port 53398
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+1630964597670	geckodriver	INFO	Listening on 127.0.0.1:63011
+1630964600702	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\pedro\\AppData\\Local\\Temp\\rust_mozprofile7ybU1Q"
+1630964601150	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\pedro\\AppData\\Local\\Temp\\rust_mozprofile7ybU1Q\\search.json.mozlz4", (void 0)))
+1630964603688	Marionette	INFO	Listening on port 63019
+1630964603881	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1630964606230	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1630964643233	Marionette	INFO	Stopped listening on port 63019
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+[Parent 3164, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1630964652341	geckodriver	INFO	Listening on 127.0.0.1:63198
+1630964655370	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\pedro\\AppData\\Local\\Temp\\rust_mozprofileyttPh4"
+1630964655886	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\pedro\\AppData\\Local\\Temp\\rust_mozprofileyttPh4\\search.json.mozlz4", (void 0)))
+1630964658406	Marionette	INFO	Listening on port 63207
+1630964658561	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1630964660694	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+1630964713448	Marionette	INFO	Stopped listening on port 63207
+JavaScript error: resource:///modules/Interactions.jsm, line 209: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
