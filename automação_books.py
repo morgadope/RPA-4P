@@ -45,8 +45,8 @@ else:
 
 data = (format(data, "%d/%m/%Y"))
 
-wdw.until(frame_to_be_available_and_switch_to_it)
-driver.switch_to.frame(0)
+
+
 driver.find_element_by_xpath('//*[@id="initial-period-filter"]').click()
 driver.find_element_by_xpath('//*[@id="initial-period-filter"]').clear()
 driver.find_element_by_xpath('//*[@id="initial-period-filter"]').send_keys(data)
@@ -60,13 +60,12 @@ locais = ["alvorada", "barra oeste ", "barcelos", "casa do sabao", "Compre mais 
           "Prezunic", "Ramigos", "Superprix", " Torre"]  # Lista que define endereços nome das lojas 
 
 for local in locais:  # para cada local fazer processo 
-    driver.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/button')  # Seleciona local
-    driver.find_element_by_xpath(
-        '//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[1]/div/input').click()  # seleciona text box local
+    driver.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/button').click()  # Seleciona local
+    driver.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[1]/div/input').click()  # seleciona text box local
     driver.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[1]/div/input').send_keys(local)
+    time.sleep(5)
     for n in range(0, 3):
-        driver.find_element_by_xpath(
-            '//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[2]/a/label/input').click()  # seleciona
+        driver.find_element_by_xpath('//*[@id="filterPanel"]/div[6]/div[1]/div[2]/div/ul/li[2]/a/label/input').click()  # seleciona
 
 driver.find_element_by_xpath('//*[@id="btnFilter"]').click()  # clicar em filtrar
 
