@@ -43,6 +43,7 @@ if datetime.today().weekday() != 0:
 else:
     data += timedelta(days=-2)
 
+
 data = (format(data, "%d/%m/%Y"))
 
 
