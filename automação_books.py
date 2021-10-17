@@ -15,8 +15,8 @@ driver.maximize_window()
 
 # Tela de login"
 
-driver.find_element_by_xpath('//*[@id="username"]').send_keys('master')
-driver.find_element_by_xpath('//*[@id="password"]').send_keys('iq@4p')
+driver.find_element_by_xpath('//*[@id="username"]').send_keys('*****')
+driver.find_element_by_xpath('//*[@id="password"]').send_keys('*****')
 driver.find_element_by_xpath('//*[@id="password"]').send_keys(Keys.ENTER)
 time.sleep(5)
 
